@@ -11,10 +11,10 @@
       crossorigin="anonymous"
     />
     <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
       crossorigin="anonymous"
     ></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -29,24 +29,24 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Nav bar  -->
     <nav class="navbar navbar-dark bg-dark justify-content-center">
-      <span class="navbar-brand"><h3>Weather dashboard</h3></span>
+      <h3><span class="navbar-brand">Weather dashboard</span></h3>
     </nav>
+    <!-- Container div -->
     <div class="container-fluid m-2">
       <div class="row">
+        <!-- Left column -->
         <div class="col-2">
+          <!-- First section on left column -->
           <div class="row">
             <label><b>Search for a city:</b></label>
             <div class="input-group">
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Search"
-                aria-label="Search"
-              />
+              <input class="form-control" id="input-value" type="text" />
               <div class="input-group-append">
                 <span class="input-group-text"
                   ><i class="fa fa-search"></i
@@ -54,88 +54,44 @@
               </div>
             </div>
           </div>
+          <!-- Second section on left column -->
           <div class="row-12 mt-2">
-            <ul class="list-group">
-              <li class="list-group-item">India</li>
-            </ul>
+            <ul class="list-group"></ul>
           </div>
         </div>
-        <div class="col-8 m-3">
+        <!-- Right column -->
+        <div class="col-8 m-3" id="colDiv2">
+          <!-- First section on right column -->
           <div class="row-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">City name,Date,Weather symbol</h5>
-                <p class="card-text">
-                  Temperature:
-                </p>
-                <p class="card-text">
-                  Humidity:
-                </p>
-                <p class="card-text">
-                  Wind speed:
-                </p>
-                <p class="card-text">
-                  UV Index:
-                </p>
+                <div>
+                  <h5 class="card-title" id="city-name"></h5>
+                </div>
+                <div class="m-1">
+                  <span><b>Temperature: </b></span>
+                  <span id="main-temp"></span>
+                </div>
+                <div class="m-1">
+                  <span><b>Humidity: </b></span>
+                  <span id="main-humidity"></span>
+                </div>
+                <div class="m-1">
+                  <span><b>Wind speed:</b> </span>
+                  <span id="main-wind-speed"> </span>
+                </div>
+                <div class="m-1">
+                  <span><b>UV Index: </b></span>
+                  <span id="main-UV"></span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <h4>5-Day Forecast</h4>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-                <div class="card">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Symbol</p>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Humidity:</p>
+            <!-- Second section on right column -->
+            <div class="row mt-5 ml-1 mb-3">
+              <h4>5-Day Forecast:</h4>
             </div>
-            </div>
-            </div>
-            <div class="col-sm">
-                <div class="card">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Symbol</p>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Humidity:</p>
-            </div>
-            </div>
-            </div>
-            <div class="col-sm">
-                <div class="card">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Symbol</p>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Humidity:</p>
-            </div>
-            </div>
-            </div>
-            <div class="col-sm">
-                <div class="card">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Symbol</p>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Humidity:</p>
-            </div>
-            </div>
-            </div>
-            <div class="col-sm">
-                <div class="card">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Symbol</p>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Humidity:</p>
-            </div>
-            </div>
-            </div>
-      </div>
-        
+            <!-- Third section on right column created dynamically using jquery-->
+            <div class="row" id="dayforecast"></div>
           </div>
         </div>
       </div>
