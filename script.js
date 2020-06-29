@@ -67,3 +67,75 @@ function displayCurrent(inputCity) {
     });
   });
 }
+
+function displayForecast(inputCity) {
+  // Generating 5-Day Forecast data
+  const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity}&apikey=3335d3205dc42ddae4cd11cb452c07fd`;
+
+  // API call for forecast data
+  $.ajax({
+    url: forecastURL,
+    method: 'GET',
+  }).then((forecastResponse) => {
+    for (let i = 6; i < forecastResponse.list.length; i += 8) {
+      const colCardDiv = $('<div>');
+      $('#dayforecast').append(colCardDiv);
+      colCardDiv.addClass('col-sm');
+
+      const cardDiv = $('<div>');
+      cardDiv.appendTo(colCardDiv);
+      cardDiv.addClass('card forecastCard');
+
+      const cardBodyDiv = $('<div>');
+      cardBodyDiv.appendTo(cardDiv);
+      cardBodyDiv.addClass('card-body');
+
+      const hTag = $('</p>');
+      const forecastdt = forecastResponse.list[i].dt;
+      const forecastDate = moment.unix(forecastdt).format('L');
+      hTag.html(`${forecastDate}`);
+      hTag.appendTo(cardBodyDiv);
+
+      const weatherSymbol = forecastResponse.list[i].weather[0].icon;
+      const iconUrl2 = `http://openweathermap.org/img/w/${weatherSymbol}.png`;
+      const imgDiv2 = $('<img>');
+      imgDiv2.attr('src', iconUrl2);
+      imgDiv2.attr('title', forecastResponse.list[i].weather[0].main);
+
+      imgDiv2.appendTo(cardBodyDiv);
+
+      const p2Tag = $('</p>');
+      p2Tag.appendTo(cardBodyDiv);
+      p2Tag.text(`Temp: ${forecastResponse.list[i].main.temp}`);
+
+      const p3Tag = $('</p>');
+      p3Tag.appendTo(cardBodyDiv);
+      p3Tag.text(`Humidity: ${forecastResponse.list[i].main.humidity}`);
+    }
+  });
+}
+
+function fetchAndRenderData(city) {
+  $('#dayforecast').html('');
+  $('#city-name').html('');
+  $('#main-temp').html('');
+  $('#main-humidity').html('');
+  $('#main-wind-speed').html('');
+  $('#main-UV').html('');
+
+  displayCurrent(city);
+  displayForecast(city);
+}
+
+$(document).ready(() => {
+  renderCity();
+
+  const cityList = fetchCity();
+  const defaultCity = cityList[0] || 'Toronto';
+  fetchAndRenderData(defaultCity);
+
+  $('.input-group-append').click(() => {
+    const inputCity = $('#input-value').val();
+    fetchAndRenderData(inputCity);
+  });
+});
