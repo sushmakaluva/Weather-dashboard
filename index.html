@@ -31,6 +31,8 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <script src="config.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
     <!-- Nav bar  -->
@@ -42,7 +44,7 @@
       <div class="row">
         <!-- Left column -->
         <div class="col-2">
-          <!-- First section on left column -->
+          <!-- Search city section -->
           <div class="row">
             <label><b>Search for a city:</b></label>
             <div class="input-group">
@@ -54,14 +56,14 @@
               </div>
             </div>
           </div>
-          <!-- Second section on left column -->
+          <!-- City list section -->
           <div class="row-12 mt-2">
             <ul class="list-group"></ul>
           </div>
         </div>
         <!-- Right column -->
         <div class="col-8 m-3" id="colDiv2">
-          <!-- First section on right column -->
+          <!-- Current weather display section-->
           <div class="row-12">
             <div class="card">
               <div class="card-body">
@@ -86,16 +88,14 @@
                 </div>
               </div>
             </div>
-            <!-- Second section on right column -->
+            <!-- Forecast weather section -->
             <div class="row mt-5 ml-1 mb-3">
               <h4>5-Day Forecast:</h4>
             </div>
-            <!-- Third section on right column created dynamically using jquery-->
             <div class="row" id="dayforecast"></div>
           </div>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>

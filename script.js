@@ -1,4 +1,4 @@
-const API_KEY = 'dummy';
+var mykey = config.API_KEY;
 
 // Retrieving from local storage
 function fetchCity() {
@@ -34,7 +34,7 @@ function saveCity(city) {
 
 // Display current weather conditions for the selected city
 function displayCurrent(inputCity) {
-  const queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&apikey=${API_KEY}`;
+  const queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&apikey=${mykey}`;
 
   // Creating an AJAX call for the entered city button
   $.ajax({
@@ -61,7 +61,7 @@ function displayCurrent(inputCity) {
     $('#main-wind-speed').html(` ${response.wind.speed}`);
 
     // API call for UV Index
-    const uvURL = `http://api.openweathermap.org/data/2.5/uvi?lat=${response.coord.lat}&lon=${response.coord.lon}&appid=${API_KEY}`;
+    const uvURL = `http://api.openweathermap.org/data/2.5/uvi?lat=${response.coord.lat}&lon=${response.coord.lon}&appid=${mykey}`;
     $.ajax({
       url: uvURL,
       method: 'GET',
@@ -74,7 +74,7 @@ function displayCurrent(inputCity) {
 // Display Forecasted weather conditions for the selected city
 function displayForecast(inputCity) {
   // Generating 5-Day Forecast data
-  const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity}&apikey=${API_KEY}`;
+  const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity}&apikey=${mykey}`;
 
   // API call for forecast data
   $.ajax({
