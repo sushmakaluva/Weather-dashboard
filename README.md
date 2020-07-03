@@ -4,18 +4,23 @@
 
 ### Description
 
-* Weather dashboard is a weather application that gives current and forecast wetaher data of a city.
+* Weather dashboard is a weather application to find current weather conditions and future weather outlook for multiple cities.
 
 ### How does it work?
  
-* The app displays standard business hours (9 a.m. to 5 p.m.). 
-* Each time slot represents one hour and has the following:
- ** The time
- ** Textarea to hold user input
- ** Save button
-* Clicking on the save button will store the time and user input in localStorage.
-* Additionally, each hour is color coded to reflect whether the time slot is in the past,present or future.
-
+* Displays the following under current weather conditions:
+ ** City name
+ ** Date
+ ** Temperature
+ ** Humidity
+ ** Wind speed
+ ** UV Index
+ ** Weather icon
+* It has a search history so that users can access their past search terms. Clicking on the city name should perform a new search that returns current and future conditions for that city.
+* Includes a 5-Day Forecast for the cities
+* Application stores previously searched for cities in localstorage and displays them to the user.
+* Application loads last searched city forecast on page load.
+* Initial loading of page takes some time to retrieve the current city weather conditions.
 
 ### Technologies used to build this site:
 
@@ -25,6 +30,7 @@
 * Javascript
 * Jquery
 * JSON
+* AJAX
 * Web - API's : OpenWeather API & Geolocation API
 * Local Storage
 
