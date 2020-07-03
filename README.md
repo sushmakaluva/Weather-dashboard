@@ -9,13 +9,13 @@
 ### How does it work?
  
 * Displays the following under current weather conditions:
- ++ City name
- ++ Date
- ++ Temperature
- ++ Humidity
- ++ Wind speed
- ++ UV Index
- ++ Weather icon
+  * City name
+  * Date
+  * Temperature
+  * Humidity
+  * Wind speed
+  * UV Index
+  * Weather icon
 * It has a search history so that users can access their past search terms. Clicking on the city name should perform a new search that returns current and future conditions for that city.
 * Includes a 5-Day Forecast for the cities
 * Application stores previously searched for cities in localstorage and displays them to the user.
