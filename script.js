@@ -92,9 +92,6 @@ function displayForecast(inputCity) {
     url: forecastURL,
     method: 'GET',
   }).then((forecastResponse) => {
-    // forecastResponse.list.forEach((element) => {
-    //   console.log(moment.unix(element.dt).format('L'), Math.random() element.weather[0].main);
-
     for (let i = 6; i < forecastResponse.list.length; i += 8) {
       // creating card divs
       const colCardDiv = $('<div>');
@@ -188,7 +185,5 @@ $(document).ready(() => {
     const inputCity = $('#input-value').val();
     fetchAndRenderData(inputCity);
   });
-  $('.btnClass').on('click', () => {
-    console.log('Hi');
-  });
+
 });
