@@ -52,9 +52,9 @@
 + Strings, Arrays, Loops, Objects
 
 ### Challenges, Opportunities for Improvement
- + This app was created using the Open Weather Map data API. In order to get all the information needed, a good deal of manipulation of the response from the get request was needed, including taking information from one response to generate a new request. 
- + For example, the initial search based on city name returns latitude and longitude coordinates, and these coordinates are used in the UV Index get request.
- + One improvement with the app can be done to display the 'city not found error' if the Open Weather Map API fails to find a city that matches what the user typed.
+ + This app was created using the Open Weather Map API. In order to get all the information needed, a good deal of manipulation of the response from the get request was needed, including taking information from one response to generate a new request. 
+ + For example, the initial search based on city name returns latitude and longitude coordinates, and these coordinates were used to get the UV Index.
+ + One improvement with the app is to display the 'city not found error' if the Open Weather Map API fails to find a city that matches what the user typed.
 
 
 ![Screenshot](assets/website_img.png)
