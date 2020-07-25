@@ -8,7 +8,6 @@
  This app also uses local storage to save a history of cities for which the user has previously searched.
 
 ### How does it work?
- 
 * Displays the following under current weather conditions:
   * City name
   * Date
