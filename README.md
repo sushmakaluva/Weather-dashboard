@@ -4,10 +4,10 @@
 
 ### Description
 
-* Weather dashboard is a weather application to find current weather conditions and future weather outlook for multiple cities.
+* Weather dashboard is an app that allows the user to search for a city and displays the current weather conditions as well as a 5-day forecast. 
+ This app also uses local storage to save a history of cities for which the user has previously searched.
 
 ### How does it work?
- 
 * Displays the following under current weather conditions:
   * City name
   * Date
@@ -34,6 +34,10 @@
 * Web - API's : OpenWeather API & Geolocation API
 * Local Storage
 
+### API's used:
+
+* OpenWeather API 
+* Geolocation API
 
 
 ### Components used to build this quiz:
@@ -46,6 +50,11 @@
 + Local Storage variables
 + Strings, Arrays, Loops, Objects
 
+### Challenges, Opportunities for Improvement
+ + This app was created using the Open Weather Map API. In order to get all the information needed, a good deal of manipulation of the response from the get request was needed, including taking information from one response to generate a new request. 
+ + For example, the initial search based on city name returns latitude and longitude coordinates, and these coordinates were used to get the UV Index.
+ + One improvement with the app is to display the 'city not found error' if the Open Weather Map API fails to find a city that matches what the user typed.
 
 
 ![Screenshot](assets/website_img.png)
+
